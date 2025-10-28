@@ -1,0 +1,600 @@
+Here the plots of the outputs:
+
+Facebook/react plot:
+[FACEBOOK/REACT] Loaded page 54. Total PRs: 3800 / 8000...
+
+[FACEBOOK/REACT] Estimated PRs remaining: 4200
+
+[FACEBOOK/REACT] Time window boundary reached or MAX_PR_PULL (8000) reached. Stopping.
+
+[FACEBOOK/REACT] PRs after date filtering: 3833
+
+Loaded 3833 PRs for facebook/react (from 2022-10-28 to 2025-10-23)
+
+[INFO] Forcing time series frequency to **Weekly ('W')**.
+
+Thresholds for FACEBOOK/REACT: T_Stable=14.88h, L_DIVERGENT=3.00 commits
+
+[INFO] Final time series frequency: **W** with lag **3 periods**. Length: 123 periods.
+
+ 
+
+--- CBM Predictive Modeling for FACEBOOK/REACT (123 periods) ---
+
+ADF P-Value: 0.0000. Series is reasonably stationary or borderline. Setting non-seasonal differencing (d) to **0**.
+
+[INFO] Training data smoothed with a 2-period rolling mean.
+
+ 
+
+--- Granger Causality Test (Predictive Power of τ_T) ---
+
+Testing if τ_T predicts future bugs (Specific Lags: [1, 2, 3, 4, 5, 6]):
+
+Granger P-Values (Lags [1, 2, 3, 4, 5, 6]):
+
+Lag 1: p = 0.3754
+
+ Lag 2: p = 0.6139
+
+ Lag 3: p = 0.7191
+
+ Lag 4: p = 0.7910
+
+ Lag 5: p = 0.4303
+
+ Lag 6: p = 0.6388
+
+ 
+
+CONCLUSION: τ_T decay is NOT a significant leading indicator at the tested lags (p > 0.05 for all).
+
+ 
+
+[INFO] Starting SARIMAX grid search (p,q: (0, 2)x(0, 2) | d=0, S=0, Weekly))...
+
+ 
+
+[Final Model FOUND] SARIMAX(2,0,0)x(0, 0, 0, 0) | Method: CG | AIC: -231.75, BIC: -220.70
+
+MSE (Test Data): 0.0091
+
+ 
+
+[τ_T Forecast (95% CI)]
+
+tau_T_p_2_d_0_q_0      mean   mean_se  mean_ci_lower  mean_ci_upper
+
+2025-10-12         0.408328  0.086856       0.238094       0.578562
+
+2025-10-19         0.445781  0.110985       0.228255       0.663308
+
+2025-10-26         0.473809  0.113106       0.252126       0.695492
+
+2025-11-02         0.481805  0.113466       0.259415       0.704195
+
+
+VERCEL/NEXT.JS plot:
+Loaded 7848 PRs for vercel/next.js (from 2024-04-27 to 2025-10-27)
+
+[INFO] Forcing time series frequency to **Weekly ('W')**.
+
+Thresholds for VERCEL/NEXT.JS: T_Stable=14.39h, L_DIVERGENT=6.00 commits
+
+[INFO] Final time series frequency: **W** with lag **3 periods**. Length: 75 periods.
+
+ 
+
+--- CBM Predictive Modeling for VERCEL/NEXT.JS (75 periods) ---
+
+ADF P-Value: 0.0000. Series is reasonably stationary or borderline. Setting non-seasonal differencing (d) to **0**.
+
+[INFO] Training data smoothed with a 2-period rolling mean.
+
+ 
+
+--- Granger Causality Test (Predictive Power of τ_T) ---
+
+Testing if τ_T predicts future bugs (Specific Lags: [1, 2, 3, 4, 5, 6]):
+
+Granger P-Values (Lags [1, 2, 3, 4, 5, 6]):
+
+Lag 1: p = 0.9313
+
+ Lag 2: p = 0.3124
+
+ Lag 3: p = 0.5518
+
+ Lag 4: p = 0.5278
+
+ Lag 5: p = 0.4430
+
+ Lag 6: p = 0.7095
+
+ 
+
+CONCLUSION: τ_T decay is NOT a significant leading indicator at the tested lags (p > 0.05 for all).
+
+ 
+
+[INFO] Starting SARIMAX grid search (p,q: (0, 2)x(0, 2) | d=0, S=0, Weekly))...
+
+ 
+
+[Final Model FOUND] SARIMAX(2,0,2)x(0, 0, 0, 0) | Method: CG | AIC: 36753.49, BIC: 36766.81
+
+MSE (Test Data): 0.0085
+
+ 
+
+[τ_T Forecast (95% CI)]
+
+tau_T_p_2_d_0_q_2      mean   mean_se  mean_ci_lower  mean_ci_upper
+
+2025-10-12         0.458797  0.001855       0.455161       0.462434
+
+2025-10-19         0.477780  0.002682       0.472523       0.483037
+
+2025-10-26         0.478964  0.002690       0.473692       0.484236
+
+2025-11-02         0.479775  0.002694       0.474496       0.485055
+
+Metaanalysis run with facebook/vercel:
+- META-ANALYSIS: AGGREGATED REAL DATASET (V4.1) ---
+
+===============================================================
+
+Unique merge dates across all data: 877
+
+Loaded 11681 PRs for meta-analysis (from 2022-10-28 to 2025-10-27)
+
+[INFO] Using FORCED time series frequency **W**.
+
+Thresholds for META-ANALYSIS: T_Stable=14.54h, L_DIVERGENT=5.00 commits
+
+[INFO] Final time series frequency: **W** with lag **3 periods**. Length: 126 periods.
+
+Aggregated 11681 PRs for meta-analysis (from 2 repositories)
+
+Total Neutral PRs: 4419 (0.38%)
+
+Meta Analysis Thresholds: T_Stable=14.54h | L_DIVERGENT=5.00 commits
+
+ 
+
+--- CBM Predictive Modeling for META-ANALYSIS (WEEKLY) (126 periods) ---
+
+ADF P-Value: 0.0000. Series is reasonably stationary or borderline. Setting non-seasonal differencing (d) to **0**.
+
+[INFO] Training data smoothed with a 2-period rolling mean.
+
+ 
+
+--- Granger Causality Test (Predictive Power of τ_T) ---
+
+Testing if τ_T predicts future bugs (Specific Lags: [1, 2, 3, 4, 5, 6]):
+
+Granger P-Values (Lags [1, 2, 3, 4, 5, 6]):
+
+Lag 1: p = 0.8465
+
+ Lag 2: p = 0.1463
+
+ Lag 3: p = 0.2041
+
+ Lag 4: p = 0.2874
+
+ Lag 5: p = 0.2963
+
+ Lag 6: p = 0.3398
+
+ 
+
+CONCLUSION: τ_T decay is NOT a significant leading indicator at the tested lags (p > 0.05 for all).
+
+ 
+
+[INFO] Starting SARIMAX grid search (p,q: (0, 2)x(0, 2) | d=0, S=0, Weekly))...
+
+ 
+
+[Final Model FOUND] SARIMAX(1,0,2)x(0, 0, 0, 0) | Method: CG | AIC: 40819.53, BIC: 40833.43
+
+MSE (Test Data): 0.0020
+
+ 
+
+[τ_T Forecast (95% CI)]
+
+tau_T_p_1_d_0_q_2      mean   mean_se  mean_ci_lower  mean_ci_upper
+
+2025-10-12         0.452181  0.002858       0.446579       0.457783
+
+2025-10-19         0.465303  0.003849       0.457759       0.472847
+
+2025-10-26         0.466140  0.003879       0.458537       0.473743
+
+2025-11-02         0.466895  0.003904       0.459244       0.474547
+
+ RUST-LANG/RUST plot:
+[RUST-LANG/RUST] PRs after date filtering: 8000
+
+Loaded 8000 PRs for rust-lang/rust (from 2024-10-30 to 2025-10-27)
+
+[INFO] Forcing time series frequency to **Weekly ('W')**.
+
+Thresholds for RUST-LANG/RUST: T_Stable=39.08h, L_DIVERGENT=6.00 commits
+
+[INFO] Final time series frequency: **W** with lag **3 periods**. Length: 50 periods.
+
+ 
+
+--- CBM Predictive Modeling for RUST-LANG/RUST (50 periods) ---
+
+ADF P-Value: 0.0000. Series is reasonably stationary or borderline. Setting non-seasonal differencing (d) to **0**.
+
+[INFO] Training data smoothed with a 2-period rolling mean.
+
+ 
+
+--- Granger Causality Test (Predictive Power of τ_T) ---
+
+Testing if τ_T predicts future bugs (Specific Lags: [1, 2, 3, 4, 5, 6]):
+
+Granger P-Values (Lags [1, 2, 3, 4, 5, 6]):
+
+Lag 1: p = 0.2380
+
+ Lag 2: p = 0.1272
+
+ Lag 3: p = 0.1674
+
+ Lag 4: p = 0.4353
+
+ Lag 5: p = 0.5857
+
+ Lag 6: p = 0.7042
+
+ 
+
+CONCLUSION: τ_T decay is NOT a significant leading indicator at the tested lags (p > 0.05 for all).
+
+ 
+
+[INFO] Starting SARIMAX grid search (p,q: (0, 2)x(0, 2) | d=0, S=0, Weekly))...
+
+ 
+
+[Final Model FOUND] SARIMAX(0,0,2)x(0, 0, 0, 0) | Method: CG | AIC: 22372.08, BIC: 22379.13
+
+MSE (Test Data): 0.0064
+
+ 
+
+[τ_T Forecast (95% CI)]
+
+tau_T_p_0_d_0_q_2      mean   mean_se  mean_ci_lower  mean_ci_upper
+
+2025-10-19         0.380600  0.001906       0.376864       0.384337
+
+2025-10-26         0.413555  0.003296       0.407094       0.420015
+
+2025-11-02         0.431941  0.003394       0.425290       0.438593
+
+2025-11-09         0.431941  0.003394       0.425290       0.438593
+
+ Meta analysis rust-lang plot:
+--- META-ANALYSIS: AGGREGATED REAL DATASET (V4.1) ---
+
+===============================================================
+
+Unique merge dates across all data: 363
+
+Loaded 8001 PRs for meta-analysis (from 2024-03-31 to 2025-10-27)
+
+[INFO] Using FORCED time series frequency **W**.
+
+Thresholds for META-ANALYSIS: T_Stable=39.08h, L_DIVERGENT=6.00 commits
+
+[INFO] Final time series frequency: **W** with lag **3 periods**. Length: 50 periods.
+
+Aggregated 8001 PRs for meta-analysis (from 2 repositories)
+
+Total Neutral PRs: 3730 (0.47%)
+
+Meta Analysis Thresholds: T_Stable=39.08h | L_DIVERGENT=6.00 commits
+
+ 
+
+--- CBM Predictive Modeling for META-ANALYSIS (WEEKLY) (50 periods) ---
+
+ADF P-Value: 0.0000. Series is reasonably stationary or borderline. Setting non-seasonal differencing (d) to **0**.
+
+[INFO] Training data smoothed with a 2-period rolling mean.
+
+ 
+
+--- Granger Causality Test (Predictive Power of τ_T) ---
+
+Testing if τ_T predicts future bugs (Specific Lags: [1, 2, 3, 4, 5, 6]):
+
+Granger P-Values (Lags [1, 2, 3, 4, 5, 6]):
+
+Lag 1: p = 0.2380
+
+ Lag 2: p = 0.1272
+
+ Lag 3: p = 0.1674
+
+ Lag 4: p = 0.4353
+
+ Lag 5: p = 0.5857
+
+ Lag 6: p = 0.7042
+
+ 
+
+CONCLUSION: τ_T decay is NOT a significant leading indicator at the tested lags (p > 0.05 for all).
+
+ 
+
+[INFO] Starting SARIMAX grid search (p,q: (0, 2)x(0, 2) | d=0, S=0, Weekly))...
+
+ 
+
+[Final Model FOUND] SARIMAX(0,0,2)x(0, 0, 0, 0) | Method: CG | AIC: 22372.08, BIC: 22379.13
+
+MSE (Test Data): 0.0064
+
+ 
+
+[τ_T Forecast (95% CI)]
+
+tau_T_p_0_d_0_q_2      mean   mean_se  mean_ci_lower  mean_ci_upper
+
+2025-10-19         0.380600  0.001906       0.376864       0.384337
+
+2025-10-26         0.413555  0.003296       0.407094       0.420015
+
+2025-11-02         0.431941  0.003394       0.425290       0.438593
+
+2025-11-09         0.431941  0.003394       0.425290       0.438593
+
+ 
+
+[Visualization] Plot saved to cbm_analysis_plot_metaanalysis_weekly_v4_1.png.
+
+ 
+
+===============================================================
+
+END OF CBM PREDICTIVE VALIDATION. V4.1 Final Release Complete.
+
+Total runtime: 0 days 04:40:41.758000
+
+===============================================================
+
+BITCOIN/BITCOIN plot:
+[BITCOIN/BITCOIN] PRs after date filtering: 3224
+
+Loaded 3224 PRs for bitcoin/bitcoin (from 2022-10-31 to 2025-10-28)
+
+[INFO] Forcing time series frequency to **Weekly ('W')**.
+
+Thresholds for BITCOIN/BITCOIN: T_Stable=139.38h, L_DIVERGENT=4.00 commits
+
+[INFO] Final time series frequency: **W** with lag **3 periods**. Length: 141 periods.
+
+ 
+
+--- CBM Predictive Modeling for BITCOIN/BITCOIN (141 periods) ---
+
+ADF P-Value: 0.0011. Series is reasonably stationary or borderline. Setting non-seasonal differencing (d) to **0**.
+
+[INFO] Training data smoothed with a 2-period rolling mean.
+
+ 
+
+--- Granger Causality Test (Predictive Power of τ_T) ---
+
+Testing if τ_T predicts future bugs (Specific Lags: [1, 2, 3, 4, 5, 6]):
+
+Granger P-Values (Lags [1, 2, 3, 4, 5, 6]):
+
+Lag 1: p = 0.1503
+
+ Lag 2: p = 0.1649
+
+ Lag 3: p = 0.3262
+
+ Lag 4: p = 0.3151
+
+ Lag 5: p = 0.4758
+
+ Lag 6: p = 0.2130
+
+ 
+
+CONCLUSION: τ_T decay is NOT a significant leading indicator at the tested lags (p > 0.05 for all).
+
+ 
+
+[INFO] Starting SARIMAX grid search (p,q: (0, 2)x(0, 2) | d=0, S=0, Weekly))...
+
+ 
+
+[Final Model FOUND] SARIMAX(2,0,0)x(0, 0, 0, 0) | Method: CG | AIC: 18897.34, BIC: 18908.96
+
+MSE (Test Data): 0.0349
+
+ 
+
+[τ_T Forecast (95% CI)]
+
+tau_T_p_2_d_0_q_0      mean   mean_se  mean_ci_lower  mean_ci_upper
+
+2025-10-12         0.491675  0.006753       0.478439       0.504911
+
+2025-10-19         0.488232  0.008344       0.471879       0.504586
+
+2025-10-26         0.484009  0.008471       0.467406       0.500611
+
+2025-11-02         0.482011  0.008483       0.465384       0.498638
+
+MICROSOFT/VSCODE plot:
+[MICROSOFT/VSCODE] PRs after date filtering: 8000
+
+Loaded 8000 PRs for MICROSOFT/VSCODE (from 2025-01-07 to 2025-10-28)
+
+[INFO] Forcing time series frequency to **Weekly ('W')**.
+
+Thresholds for MICROSOFT/VSCODE: T_Stable=1.00h, L_DIVERGENT=3.00 commits
+
+[INFO] Final time series frequency: **W** with lag **3 periods**. Length: 40 periods.
+
+ 
+
+--- CBM Predictive Modeling for MICROSOFT/VSCODE (40 periods) ---
+
+ADF P-Value: 0.0013. Series is reasonably stationary or borderline. Setting non-seasonal differencing (d) to **0**.
+
+[INFO] Training data smoothed with a 2-period rolling mean.
+
+ 
+
+--- Granger Causality Test (Predictive Power of τ_T) ---
+
+Testing if τ_T predicts future bugs (Specific Lags: [1, 2, 3, 4, 5, 6]):
+
+Granger P-Values (Lags [1, 2, 3, 4, 5, 6]):
+
+Lag 1: p = 0.3774
+
+ Lag 2: p = 0.2601
+
+ Lag 3: p = 0.2636
+
+ Lag 4: p = 0.3417
+
+ Lag 5: p = 0.3204
+
+ Lag 6: p = 0.3049
+
+ 
+
+CONCLUSION: τ_T decay is NOT a significant leading indicator at the tested lags (p > 0.05 for all).
+
+ 
+
+[INFO] Starting SARIMAX grid search (p,q: (0, 2)x(0, 2) | d=0, S=0, Weekly))...
+
+ 
+
+[Final Model FOUND] SARIMAX(1,0,2)x(0, 0, 0, 0) | Method: CG | AIC: 23421.25, BIC: 23428.73
+
+MSE (Test Data): 0.0014
+
+ 
+
+[τ_T Forecast (95% CI)]
+
+tau_T_p_1_d_0_q_2      mean   mean_se  mean_ci_lower  mean_ci_upper
+
+2025-10-19         0.519691  0.001407       0.516933       0.522449
+
+2025-10-26         0.537575  0.002139       0.533382       0.541767
+
+2025-11-02         0.536965  0.002187       0.532677       0.541252
+
+2025-11-09         0.536409  0.002227       0.532045       0.540774
+
+ Metaanalysis bitcoin vscode plot:
+--- META-ANALYSIS: AGGREGATED REAL DATASET (V4.1) ---
+
+===============================================================
+
+Unique merge dates across all data: 865
+
+Loaded 11224 PRs for meta-analysis (from 2022-10-31 to 2025-10-28)
+
+[INFO] Using FORCED time series frequency **W**.
+
+Thresholds for META-ANALYSIS: T_Stable=2.12h, L_DIVERGENT=3.00 commits
+
+[INFO] Final time series frequency: **W** with lag **3 periods**. Length: 144 periods.
+
+Aggregated 11224 PRs for meta-analysis (from 2 repositories)
+
+Total Neutral PRs: 3718 (0.33%)
+
+Meta Analysis Thresholds: T_Stable=2.12h | L_DIVERGENT=3.00 commits
+
+ 
+
+--- CBM Predictive Modeling for META-ANALYSIS (WEEKLY) (144 periods) ---
+
+ADF P-Value: 0.8302. Setting non-seasonal differencing (d) to **1** for strong non-stationarity.
+
+[INFO] Training data smoothed with a 2-period rolling mean.
+
+ 
+
+--- Granger Causality Test (Predictive Power of τ_T) ---
+
+Testing if τ_T predicts future bugs (Specific Lags: [1, 2, 3, 4, 5, 6]):
+
+Granger P-Values (Lags [1, 2, 3, 4, 5, 6]):
+
+Lag 1: p = 0.0003 <-- SIGNIFICANT
+
+Lag 2: p = 0.0198 <-- SIGNIFICANT
+
+Lag 3: p = 0.7306
+
+ Lag 4: p = 0.5878
+
+ Lag 5: p = 0.3741
+
+ Lag 6: p = 0.4552
+
+ 
+
+CONCLUSION: τ_T decay is a **SIGNIFICANT** leading indicator at **Lag 1 periods (weeks)** (p = 0.0003).
+
+ 
+
+[INFO] Starting SARIMAX grid search (p,q: (0, 2)x(0, 2) | d=1, S=0, Weekly))...
+
+ 
+
+[Final Model FOUND] SARIMAX(1,1,1)x(0, 0, 0, 0) | Method: CG | AIC: 68479.53, BIC: 68491.21
+
+MSE (Test Data): 0.0000
+
+ 
+
+[τ_T Forecast (95% CI)]
+
+tau_T_p_1_d_1_q_1      mean   mean_se  mean_ci_lower  mean_ci_upper
+
+2025-10-19         0.558217  0.001966       0.554363       0.562071
+
+2025-10-26         0.575075  0.003865       0.567500       0.582649
+
+2025-11-02         0.574181  0.004842       0.564690       0.583671
+
+2025-11-09         0.578629  0.005718       0.567422       0.589835
+
+ 
+
+[Visualization] Plot saved to cbm_analysis_plot_metaanalysis_weekly_v4_1.png.
+
+ 
+
+===============================================================
+
+END OF CBM PREDICTIVE VALIDATION. V4.1 Final Release Complete.
+
+Total runtime: 0 days 05:30:05.954000
+
+===============================================================
